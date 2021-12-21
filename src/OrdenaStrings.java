@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class OrdenaStrings {
 
@@ -32,10 +33,35 @@ public class OrdenaStrings {
 		palavras.sort(comparador2);
 		System.out.println(palavras);
 		
+		System.out.println("===========================================================");
+		// Forma antiga de varrer a Lista
+//		for (String p : palavras) {
+//			System.out.println(p);
+//		}
+		
+		System.out.println("===========================================================");
+		// Nova foram de varrer a Lista
+		Consumer<String> consumidor = new ImprimiNaLinha();
+		palavras.forEach(consumidor);
+		
+		
+		
+		
 		
 		
 	}
 
+}
+
+
+class ImprimiNaLinha implements Consumer<String>{
+
+	@Override
+	public void accept(String s) {
+		System.out.println(s);
+		
+	}
+	
 }
 
 
