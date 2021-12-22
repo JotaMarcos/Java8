@@ -58,8 +58,19 @@ public class OrdenaStrings {
 //		palavras.forEach(impressor);
 		
 		System.out.println("===========================================================");
-		palavras.forEach((String s) -> System.out.println(s));
+		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		palavras.sort((s1, s2) -> s1.length() - s2.length());
+		
+		
+		palavras.forEach(palavra -> System.out.println(palavra));
+		
+		
+		
 
+		System.out.println("===========================================================");
+		new Thread(() -> System.out.println("Executando um Runnable")).start();
+
+		
 	}
 }
 
