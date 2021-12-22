@@ -77,13 +77,16 @@ public class OrdenaStrings {
 		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
 		palavras.sort((s1, s2) -> s1.length() - s2.length());
 
-		palavras.forEach(System.out::println);
 
-			
 		palavras.sort((s1, s2) -> {
 		    return Integer.compare(s1.length(), s2.length()); 
 		});
 		palavras.sort(Comparator.comparing(s -> s.length()));
+		
+		palavras.sort(Comparator.comparing(String::length));
+		
+		palavras.sort(String.CASE_INSENSITIVE_ORDER);
+		palavras.forEach(System.out::println);
 		
 		System.out.println("===========================================================");
 		new Thread(() -> System.out.println("Executando um Runnable")).start();
